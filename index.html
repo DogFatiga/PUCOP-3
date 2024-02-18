@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PUCOP3</title>
+    <!-- Incluimos Tailwind CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-white text-gray-200">
+    <div class="container mx-auto px-4 py-8">
+        <header class="mb-8 text-center">
+            <h1 class="text-4xl font-bold mb-4 text-blue-500">Padrón Único Consolidado de Población (PUCOP)</h1>
+            <p class="text-lg text-gray-400">El Padrón Único Consolidado de Población (PUCOP) es una nómina de población afiliada/beneficiaria producto del agregado de los padrones de afiliados/beneficiarios de cada Agente Financiador. Se conforma a partir de los campos requeridos en la matriz correspondiente.</p>
+        </header>
+        
+        <form id="formulario">
+            <div class="w-full max-w-4xl mx-auto bg-indigo-300 p-6 rounded-lg">
+                <h2 class="text-xl font-semibold mb-4">Formulario de la Nomina</h2>
+            
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                    <!-- Agrega los campos correspondientes aquí -->
+                      <!-- Agrega los campos correspondientes aquí -->
+                      <div class="input-field">
+                        <label for="cuil_titular">CUIL del titular</label>
+                        <input type="number" id="cuil_titular" placeholder="Ej. 20345678901" class="bg-gray-700 rounded-lg py-2 px-4 w-full" required>
+                    </div>
+                    <div class="input-field">
+                        <label for="cuil_beneficiario">CUIL del beneficiario</label>
+                        <input type="number" id="cuil_beneficiario" placeholder="Ej. 20345678901" class="bg-gray-700 rounded-lg py-2 px-4 w-full" required>
+                    </div>
+                    <div class="input-field">
+                        <label for="codigo_parentesco">Código parentesco</label>
+                        <input type="number" id="codigo_parentesco" placeholder="Ej. 02" class="bg-gray-700 rounded-lg py-2 px-4 w-full" required>
+                    </div>
+                    <div class="input-field">
+                        <label for="tipo_beneficiario">Tipo de Beneficiario</label>
+                        <input type="number" id="tipo_beneficiario" placeholder="Ej. 1" class="bg-gray-700 rounded-lg py-2 px-4 w-full" required>
+                    </div>
+                    <div class="input-field">
+                        <label for="apellidos_nombres">Apellido/s y Nombre/s</label>
+                        <input type="text" id="apellidos_nombres" placeholder="Ej. García López, Juan" class="bg-gray-700 rounded-lg py-2 px-4 w-full" required>
+                    </div>
+                    <div class="input-field">
+                        <label for="sexo_documento">Sexo Registrado en el Documento</label>
+                        <input type="text" id="sexo_documento" placeholder="Ej. Masculino" class="bg-gray-700 rounded-lg py-2 px-4 w-full" required>
+                    </div>
+                    <div class="input-field">
+                        <label for="fecha_nacimiento">Fecha de Nacimiento</label>
+                        <input type="date" id="fecha_nacimiento" class="bg-gray-700 rounded-lg py-2 px-4 w-full" required>
+                    </div>
+                    <div class="input-field">
+                        <label for="calle">Calle</label>
+                        <input type="text" id="calle" placeholder="Ej. Av. Rivadavia" class="bg-gray-700 rounded-lg py-2 px-4 w-full" required>
+                    </div>
+                    <div class="input-field">
+                        <label for="numero_puerta">N° de puerta</label>
+                        <input type="number" id="numero_puerta" placeholder="Ej. 1234" class="bg-gray-700 rounded-lg py-2 px-4 w-full" required>
+                    </div>
+                    <div class="input-field">
+                        <label for="piso">Piso</label>
+                        <input type="number" id="piso" placeholder="Ej. 2" class="bg-gray-700 rounded-lg py-2 px-4 w-full" required>
+                    </div>
+                    <div class="input-field">
+                        <label for="departamento">Departamento</label>
+                        <input type="text" id="departamento" placeholder="Ej. A" class="bg-gray-700 rounded-lg py-2 px-4 w-full" required>
+                    </div>
+                    <div class="input-field">
+                        <label for="codigo_postal">Código Postal</label>
+                        <input type="number" id="codigo_postal" placeholder="Ej. 1406" class="bg-gray-700 rounded-lg py-2 px-4 w-full" required>
+                    </div>
+                    <div class="input-field">
+                        <label for="provincia">Provincia</label>
+                        <input type="text" id="provincia" placeholder="Ej. Buenos Aires" class="bg-gray-700 rounded-lg py-2 px-4 w-full" required>
+                    </div>
+                    <div class="input-field">
+                        <label for="fecha_ultimo_pago">Fecha de Último Pago / Inscripción</label>
+                        <input type="date" id="fecha_ultimo_pago" class="bg-gray-700 rounded-lg py-2 px-4 w-full" required>
+                    </div>
+                    <div class="input-field">
+                        <label for="fecha_cierre_padron">Fecha de Cierre del Padrón</label>
+                        <input type="date" id="fecha_cierre_padron" class="bg-gray-700 rounded-lg py-2 px-4 w-full" required>
+                    </div>
+                    
+                    
+                </div>
+                <button id="btn_subir" class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded-full mb-4 mt-4">
+                   ALTA
+                </button>
+                <button id="btn_limpiar" class="bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-4 rounded-full mb-4 mt-4">
+                    BAJA
+                 </button>
+            </div>
+                
+           
+        </form>
+    </div>
+    <script src="/js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Informe de Formulario</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    
+</head>
+<body class="bg-gray-900 text-gray-300">
+    <div class="container mx-auto px-4 py-8">
+        <header class="mb-8 text-center">
+            <h1 class="text-4xl font-bold mb-4 text-blue-500">Informe de Formulario</h1>
+            <p class="text-lg text-gray-400">A continuación se muestran los datos ingresados en el formulario:</p>
+        </header>
+        
+        <div class="w-full max-w-4xl mx-auto bg-gray-800 p-6 rounded-lg">
+            <h2 class="text-xl font-semibold mb-4">Datos del Formulario</h2>
+            <div id="informe_datos">
+            </div>
+          
+          
+        </div>
+        <div class="text-center mt-8">
+           
+            <a href="index.html" class="bg-blue-500 hover:bg-blue-800 text-white font-bold py-2 px-4 rounded-full ml-4">Volver</a>
+        </div>        
+
+    </div>
+
+    
+
+    <script>
+        // Obtener los datos del almacenamiento local
+        const cuilTitular = localStorage.getItem("cuilTitular");
+        const cuilBeneficiario = localStorage.getItem("cuilBeneficiario");
+        const codigoParentesco = localStorage.getItem("codigoParentesco");
+        const tipoBeneficiario = localStorage.getItem("tipoBeneficiario");
+        const apellidosNombres = localStorage.getItem("apellidosNombres");
+        const sexoDocumento = localStorage.getItem("sexoDocumento");
+        const fechaNacimiento = localStorage.getItem("fechaNacimiento");
+        const calle = localStorage.getItem("calle");
+        const numeroPuerta = localStorage.getItem("numeroPuerta");
+        const piso = localStorage.getItem("piso");
+        const departamento = localStorage.getItem("departamento");
+        const codigoPostal = localStorage.getItem("codigoPostal");
+        const provincia = localStorage.getItem("provincia");
+        const fechaUltimoPago = localStorage.getItem("fechaUltimoPago");
+        const fechaCierrePadron = localStorage.getItem("fechaCierrePadron");
+
+        // Construir el informe con los datos
+        const informeDatos = `
+            <p><strong>CUIL del titular:</strong> ${cuilTitular}</p>
+            <p><strong>CUIL del beneficiario:</strong> ${cuilBeneficiario}</p>
+            <p><strong>Código de parentesco:</strong> ${codigoParentesco}</p>
+            <p><strong>Tipo de Beneficiario:</strong> ${tipoBeneficiario}</p>
+            <p><strong>Apellido/s y Nombre/s:</strong> ${apellidosNombres}</p>
+            <p><strong>Sexo Registrado en el Documento:</strong> ${sexoDocumento}</p>
+            <p><strong>Fecha de Nacimiento:</strong> ${fechaNacimiento}</p>
+            <p><strong>Calle:</strong> ${calle}</p>
+            <p><strong>N° de puerta:</strong> ${numeroPuerta}</p>
+            <p><strong>Piso:</strong> ${piso}</p>
+            <p><strong>Departamento:</strong> ${departamento}</p>
+            <p><strong>Código Postal:</strong> ${codigoPostal}</p>
+            <p><strong>Provincia:</strong> ${provincia}</p>
+            <p><strong>Fecha de Último Pago / Inscripción:</strong> ${fechaUltimoPago}</p>
+            <p><strong>Fecha de Cierre del Padrón:</strong> ${fechaCierrePadron}</p>
+        `;
+
+        // Mostrar el informe en el div correspondiente
+        document.getElementById("informe_datos").innerHTML = informeDatos;
+    </script>
+</body>
+</html>
